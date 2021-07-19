@@ -1,0 +1,1 @@
+web: gunicorn plotly_django_tutorial.wsgi --log-file -

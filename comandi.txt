@@ -1,0 +1,11 @@
+- Creo Virtual Environment -
+python -m venv env
+- Lo avvio -
+env\Scripts\activate
+
+python manage.py runserver
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py collectstatic
