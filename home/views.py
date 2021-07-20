@@ -337,11 +337,33 @@ def form(request):
 
         db = client['ArmoniaBot']
         col = db['Prova']
+        data = datetime.datetime.combine(data, datetime.datetime.min.time())
         col2 = db['DatabaseDietabit']
         ali = col2.find_one({'Nome': alimento})
+        if (ali == None):
+            col2 = db['DatabaseCibo']
+            ali = col2.find_one({'Nome': alimento})
+        if (ali == None):
+            col2 = db['DatabaseBDA']
+            ali = col2.find_one({'Nome': alimento})
+        if (ali == None):
+            col2 = db['SushiDB']
+            ali = col2.find_one({'Name': alimento})
         ali['Quantita'] = float(qty)
-        dt = datetime.datetime.combine(data, datetime.datetime.min.time())
-        col.insert_one({'Nome': utente, 'Data': dt, pasto: {'1': ali}})
+
+        qry = {"Nome": utente, "Data": data}
+        cerco = col.find_one(qry)
+        if (cerco == None):
+            col.insert_one({'Nome': utente, 'Data': data, pasto: {'1': ali}})
+        else:
+            if (pasto in cerco.keys()):
+                numero = str(len(cerco[pasto].keys()) + 1)
+                cerco[pasto][numero] = ali
+                new_value = {"$set": {pasto: cerco[pasto]}}
+                update = col.update_one(qry, new_value)
+            else:
+                new_value = {"$set": {pasto: {'1': ali}}}
+                update = col.update_one(qry, new_value)
 
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
