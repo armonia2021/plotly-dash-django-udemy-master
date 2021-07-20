@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'plotly_django_tutorial.urls'
@@ -178,13 +178,13 @@ STATICFILES_DIRS = [
 ]
 
 
-# Aggiunto per Heroku:
-
-#  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-import dj_database_url
-prod_db  =  dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
-
-ALLOWED_HOSTS = ['apparmonia.herokuapp.com']
+# # Aggiunto per Heroku:
+#
+# #  Add configuration for static files storage using whitenoise
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+#
+# import dj_database_url
+# prod_db  =  dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(prod_db)
+#
+# ALLOWED_HOSTS = ['apparmonia.herokuapp.com']

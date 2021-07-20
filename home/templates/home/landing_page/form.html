@@ -12,6 +12,7 @@
               background-position: center center;
               background-size: cover;
             }
+            div { text-align: center; }
             </style>
             <div class="container">
                 <div class="text-center">
@@ -21,11 +22,15 @@
 
                 <form id="contactForm" method="post">
                     {% csrf_token %}
+
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
+                            <div class="text-center">
                             <div class="form-group">
                                 <!-- Name input-->
+
                                 {{ form.search_name }}
+                                    </div>
                                 </div>
                             <div class="form-group">
                                 {{ form.pasto }}
@@ -54,119 +59,90 @@
                     {% for element in insieme %}
                         <li>{{ element }}</li>
                     {% endfor %}
-<!--                    {% for ricetta in ricette %}-->
-<!--                        <li>{{ ricetta }}</li>-->
-<!--                    {% endfor %}-->
-<!--                    <form id="contactFormFood" method="post">-->
-<!--                    {{ form2 }}-->
-<!--                        <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton2" type="submit">Send Message</button></div>-->
-<!--                        {% if messages %}-->
-<!--                            {{ form2.food.value }}-->
-<!--                        {{ form2.food.checked }}-->
-<!--                        {% endif %}-->
-<!--                        </form>-->
-<!--                    {% endif %}-->
-<!--                </form>-->
-            </div>
-        </section>
+                    {% endif %}
 
-        <section class="page-section bg-light modal fade" id="portfolio">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 1-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="{% static 'assets/img/portfolio/1.jpg' %}" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 2-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="{% static 'assets/img/portfolio/2.jpg' %}" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Explore</div>
-                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 3-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="{% static 'assets/img/portfolio/3.jpg' %}" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Finish</div>
-                                <div class="portfolio-caption-subheading text-muted">Identity</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <!-- Portfolio item 4-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="{% static 'assets/img/portfolio/4.jpg' %}" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Lines</div>
-                                <div class="portfolio-caption-subheading text-muted">Branding</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <!-- Portfolio item 5-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="{% static 'assets/img/portfolio/5.jpg' %}" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Southwest</div>
-                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <!-- Portfolio item 6-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="{% static 'assets/img/portfolio/6.jpg' %}" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </form>
             </div>
         </section>
+        <!-- Custom fonts for this template-->
+  <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script><!--dropdown-item-->
+        <a class="btn btn-primary btn-xl text-uppercase" href="" data-toggle="modal" data-target="#logoutModal"><!-- href="#" data-toggle="modal" data-target="#logoutModal"-->
+                  <i class="fas fa-pizza-slice fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Inserisci alimento
+                </a>
+        <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Aggiungi un alimento</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="contactForm2" method="post">
+                    {% csrf_token %}
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <!-- Name input-->
+                                {{ form.search_name }}
+                                </div>
+                            <div class="form-group">
+                                {{ form.pasto }}
+                                </div>
+                            <div class="form-group">
+                                {{ form.data }}
+                                    </div>
+                            <div class="form-group">
+                                {{ form.qty }}
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+<!--                    &lt;!&ndash; Submit Button&ndash;&gt;-->
+<!--                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton2" type="submit">Send Message</button></div>-->
+<!--                    {% if messages %}-->
+<!--                    {% for element in insieme %}-->
+<!--                        <li>{{ element }}</li>-->
+<!--                    {% endfor %}-->
+<!--              {% endif %}-->
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton2" type="submit">Send Message</button>
+<!--          <a class="btn btn-primary" href="/logout">Logout</a>&lt;!&ndash;/admin/logout/&ndash;&gt;-->
+        </div>
+              </form>
+            </div>
+        </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+         <!-- Bootstrap core JavaScript-->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+
+  <!-- Page level plugins -->
+  <script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="{% static 'js/demo/chart-area-demo.js' %}"></script>
+  <script src="{% static 'js/demo/chart-pie-demo.js' %}"></script>

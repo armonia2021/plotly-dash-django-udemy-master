@@ -239,6 +239,9 @@ def logout_request(request):
 	messages.info(request, "You have successfully logged out.")
 	return redirect("login")
 
+# def tables(request):
+#     return redirect("home/landing_page/tables.html")
+
 def form(request):
     def search(alimento):
         import pymongo
@@ -393,7 +396,7 @@ def form(request):
                 # 'form2' : form2
             }
             request.method = 'GET'
-            return render(request, 'home/landing_page/form.html', context)
+            return render(request, 'home/landing_page/tables.html', context)
             messages.success(request, 'Contact request submitted successfully.')
         else:
             messages.error(request, 'Invalid form submission.')
@@ -412,7 +415,7 @@ def form(request):
         #'ricette' : ricetta,
         #'form2' : form2
     }
-    return render(request, 'home/landing_page/form.html',context)
+    return render(request, 'home/landing_page/tables.html',context)
 
 # from .dash_apps.finished_apps.forms import FormForm
 #

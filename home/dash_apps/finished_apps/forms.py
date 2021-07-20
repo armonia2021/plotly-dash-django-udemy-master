@@ -46,16 +46,16 @@ pasti = [('Colazione','Colazione'),('Pranzo','Pranzo'),('Cena','Cena'),('Merenda
 
 class SearchFood(forms.Form):
     #search_name= forms.CharField(label='Che alimento vuoi inserire?', widget=forms.Select(choices=FOOD_CHOICES))
-    search_name = forms.ChoiceField(help_text = "Enter your Name",choices=FOOD_CHOICES)
+    search_name = forms.ChoiceField(help_text = "Enter your Name",choices=FOOD_CHOICES,widget=forms.Select(attrs={'class':"form-control form-control-user",'text-align':'center'}))
     #search_name = forms.CharField(choices=FOOD_CHOICES, widget=forms.TextInput(attrs={'placeholder': 'Inserisci alimento'}))
     # pasto = forms.MultipleChoiceField(
     #     required=False,
     #     widget=forms.RadioSelect,
     #     choices=pasti,
     # )
-    pasto = forms.ChoiceField(choices=pasti)
-    data = forms.DateField(initial=datetime.date.today,widget=forms.SelectDateWidget(attrs={'placeholder': '__/__/____', 'class': 'date','auto_now_add':'True'}))#,'auto_now':'True'
-    qty = forms.DecimalField()
+    pasto = forms.ChoiceField(choices=pasti,widget=forms.Select(attrs={'class':"form-control form-control-user"}))
+    data = forms.DateField(initial=datetime.date.today,widget=forms.SelectDateWidget(attrs={'placeholder': '__/__/____', 'class':"form-control form-control-user",'auto_now_add':'True'}))#,'auto_now':'True'
+    qty = forms.DecimalField(widget=forms.NumberInput(attrs={'class':"form-control form-control-user"}))
 
 # from .fields import ListTextWidget
 # pasti = [('Colazione','Colazione'),('Pranzo','Pranzo'),('Cena','Cena'),('Merenda','Merenda')]

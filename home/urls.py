@@ -17,5 +17,6 @@ urlpatterns = [
     path("login", views.login_request, name="login"),
     path("logout", views.logout_request, name= "logout"),
     #path('login.html', views.home, name='login')
+    path("tables.html",views.form, name="home"),
 
 ]
