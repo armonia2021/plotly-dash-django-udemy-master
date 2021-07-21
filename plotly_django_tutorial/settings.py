@@ -28,7 +28,7 @@ os.path.abspath('secret_key.txt')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['apparmonia.herokuapp.com']
 
 
 # Application definition
